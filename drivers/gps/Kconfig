@@ -1,0 +1,15 @@
+menuconfig IMAP_GPS_HW
+    tristate "imapx800 gps"
+	default n
+	depends on ARCH_IMAPX800
+	help
+	    for imapx800 gps driver
+
+
+if IMAP_GPS_HW
+
+config INFOTM_GPS
+    tristate "Driver for imapx800 gps"
+	help
+
+endif

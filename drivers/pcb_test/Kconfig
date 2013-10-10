@@ -1,0 +1,23 @@
+#
+# Kconfig of soops char device driver.
+#
+# InfoTM all rights reserved.
+#
+# Sololz <sololz.luo@gmail.com>.
+#
+
+menuconfig PCB_TEST
+	bool "pcb test"
+	default n
+	---help---
+	First I design this driver to implement Capslock key communication with
+	application.
+
+if PCB_TEST
+
+config PCBTEST_DEBUG
+	bool "Debug message print for pcb test"
+	depends on PCB_TEST
+	default n
+
+endif	# PCB_TEST

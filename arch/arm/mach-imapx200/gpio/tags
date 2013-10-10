@@ -1,0 +1,368 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+IG_BASE_A	base/gpio_base.h	51;"	d
+IG_BASE_B	base/gpio_base.h	53;"	d
+IG_BASE_BASE	base/gpio_base.h	91;"	d
+IG_BASE_C	base/gpio_base.h	55;"	d
+IG_BASE_CFG_10	head/imapx_gpio_api.h	29;"	d
+IG_BASE_CFG_11	head/imapx_gpio_api.h	30;"	d
+IG_BASE_CFG_ERROR	head/imapx_gpio_api.h	31;"	d
+IG_BASE_CFG_INPUT	head/imapx_gpio_api.h	27;"	d
+IG_BASE_CFG_OUTPUT	head/imapx_gpio_api.h	28;"	d
+IG_BASE_COUNT	base/gpio_base.h	88;"	d
+IG_BASE_D	base/gpio_base.h	57;"	d
+IG_BASE_DATA_ERROR	head/imapx_gpio_api.h	24;"	d
+IG_BASE_E	base/gpio_base.h	59;"	d
+IG_BASE_EINT_MODE_BET	head/imapx_gpio_api.h	38;"	d
+IG_BASE_EINT_MODE_FET	head/imapx_gpio_api.h	36;"	d
+IG_BASE_EINT_MODE_HL	head/imapx_gpio_api.h	35;"	d
+IG_BASE_EINT_MODE_LL	head/imapx_gpio_api.h	34;"	d
+IG_BASE_EINT_MODE_RET	head/imapx_gpio_api.h	37;"	d
+IG_BASE_F	base/gpio_base.h	61;"	d
+IG_BASE_FEATURE_10	base/gpio_base_private.h	52;"	d
+IG_BASE_FEATURE_11	base/gpio_base_private.h	53;"	d
+IG_BASE_FEATURE_COMMON	base/gpio_base_private.h	62;"	d
+IG_BASE_FEATURE_EINTG	base/gpio_base_private.h	59;"	d
+IG_BASE_FEATURE_EINTG1	base/gpio_base_private.h	69;"	d
+IG_BASE_FEATURE_EINTG2	base/gpio_base_private.h	70;"	d
+IG_BASE_FEATURE_EINTG3	base/gpio_base_private.h	71;"	d
+IG_BASE_FEATURE_EINTG4	base/gpio_base_private.h	72;"	d
+IG_BASE_FEATURE_EINTG5	base/gpio_base_private.h	73;"	d
+IG_BASE_FEATURE_EINTG6	base/gpio_base_private.h	74;"	d
+IG_BASE_FEATURE_EINTG_NUM	base/gpio_base_private.h	58;"	d
+IG_BASE_FEATURE_INPUT	base/gpio_base_private.h	45;"	d
+IG_BASE_FEATURE_OPOSITE	base/gpio_base_private.h	54;"	d
+IG_BASE_FEATURE_OUTPUT	base/gpio_base_private.h	46;"	d
+IG_BASE_FEATURE_PULL_DOWN	base/gpio_base_private.h	56;"	d
+IG_BASE_FEATURE_PULL_UP	base/gpio_base_private.h	55;"	d
+IG_BASE_FILETER_NONE	head/imapx_gpio_api.h	41;"	d
+IG_BASE_FILTER_MAX	head/imapx_gpio_api.h	40;"	d
+IG_BASE_G	base/gpio_base.h	63;"	d
+IG_BASE_GET_COUNT	base/gpio_base.h	89;"	d
+IG_BASE_GET_GROUP	base/gpio_base.h	90;"	d
+IG_BASE_GET_INDEX	base/gpio_base.h	92;"	d
+IG_BASE_GPIO_10_ABLE	base/gpio_base_private.h	79;"	d
+IG_BASE_GPIO_11_ABLE	base/gpio_base_private.h	80;"	d
+IG_BASE_GPIO_CHECK_PARAM	base/gpio_base.c	1361;"	d	file:
+IG_BASE_GPIO_GET_EINTG	base/gpio_base_private.h	88;"	d
+IG_BASE_GPIO_GET_EINTG_ID	base/gpio_base_private.h	89;"	d
+IG_BASE_GPIO_GET_EINTG_NUM	base/gpio_base_private.h	91;"	d
+IG_BASE_GPIO_GET_SLPCON_REG	base/gpio_base.c	1421;"	d	file:
+IG_BASE_GPIO_GET_SLPCTRL_AND_SLPCON_REG	base/gpio_base.c	1438;"	d	file:
+IG_BASE_GPIO_GET_SLPCTRL_AND_SLPDAT_REG	base/gpio_base.c	1460;"	d	file:
+IG_BASE_GPIO_GET_SLPCTRL_AND_SLPPUD_REG	base/gpio_base.c	1482;"	d	file:
+IG_BASE_GPIO_GET_SLPCTRL_REG	base/gpio_base.c	1404;"	d	file:
+IG_BASE_GPIO_INPUT_ABLE	base/gpio_base_private.h	77;"	d
+IG_BASE_GPIO_IS_OPOSITE	base/gpio_base_private.h	81;"	d
+IG_BASE_GPIO_OUTPUT_ABLE	base/gpio_base_private.h	78;"	d
+IG_BASE_GPIO_PULL_DOWN_ABLE	base/gpio_base_private.h	85;"	d
+IG_BASE_GPIO_PULL_UP_ABLE	base/gpio_base_private.h	84;"	d
+IG_BASE_GPIO_SET_EINTG_NUM	base/gpio_base_private.h	93;"	d
+IG_BASE_GROUP	base/gpio_base.c	1354;"	d	file:
+IG_BASE_H	base/gpio_base.h	65;"	d
+IG_BASE_I	base/gpio_base.h	67;"	d
+IG_BASE_IRQ_CHECK_PARAM	base/gpio_base.c	1890;"	d	file:
+IG_BASE_IRQ_FILTER_ENABLE	base/gpio_base_private.h	105;"	d
+IG_BASE_IRQ_GET_MASK_REG	base/gpio_base.c	1943;"	d	file:
+IG_BASE_IRQ_GET_PEND_REG	base/gpio_base.c	2079;"	d	file:
+IG_BASE_IS_SINGLE	base/gpio_base.h	94;"	d
+IG_BASE_IS_SLEEP_ABLE	base/gpio_base.h	95;"	d
+IG_BASE_J	base/gpio_base.h	69;"	d
+IG_BASE_K	base/gpio_base.h	71;"	d
+IG_BASE_L	base/gpio_base.h	73;"	d
+IG_BASE_M	base/gpio_base.h	75;"	d
+IG_BASE_N	base/gpio_base.h	77;"	d
+IG_BASE_O	base/gpio_base.h	79;"	d
+IG_BASE_P	base/gpio_base.h	81;"	d
+IG_BASE_Q	base/gpio_base.h	83;"	d
+IG_BASE_R	base/gpio_base.h	85;"	d
+IG_BASE_SPEC	base/gpio_base.c	1356;"	d	file:
+IG_PANIC	base/gpio_base.h	30;"	d
+IG_PANIC	base/gpio_base.h	32;"	d
+IMAPX_GPIO_ERROR	head/imapx_gpio_api.h	45;"	d
+IMAPX_GPIO_GET_GROUP	imapx_gpio.c	87;"	d	file:
+IMAPX_GPIO_GET_ID	imapx_gpio.c	88;"	d	file:
+IMAPX_GPIO_GPA0	head/imapx_gpio_api.h	47;"	d
+IMAPX_GPIO_GPA1	head/imapx_gpio_api.h	48;"	d
+IMAPX_GPIO_GPA2	head/imapx_gpio_api.h	49;"	d
+IMAPX_GPIO_GPA3	head/imapx_gpio_api.h	50;"	d
+IMAPX_GPIO_GPA4	head/imapx_gpio_api.h	51;"	d
+IMAPX_GPIO_GPA5	head/imapx_gpio_api.h	52;"	d
+IMAPX_GPIO_GPA6	head/imapx_gpio_api.h	53;"	d
+IMAPX_GPIO_GPA7	head/imapx_gpio_api.h	54;"	d
+IMAPX_GPIO_GPB0	head/imapx_gpio_api.h	56;"	d
+IMAPX_GPIO_GPB1	head/imapx_gpio_api.h	57;"	d
+IMAPX_GPIO_GPB2	head/imapx_gpio_api.h	58;"	d
+IMAPX_GPIO_GPB3	head/imapx_gpio_api.h	59;"	d
+IMAPX_GPIO_GPB4	head/imapx_gpio_api.h	60;"	d
+IMAPX_GPIO_GPC0	head/imapx_gpio_api.h	62;"	d
+IMAPX_GPIO_GPC1	head/imapx_gpio_api.h	63;"	d
+IMAPX_GPIO_GPC2	head/imapx_gpio_api.h	64;"	d
+IMAPX_GPIO_GPC3	head/imapx_gpio_api.h	65;"	d
+IMAPX_GPIO_GPC4	head/imapx_gpio_api.h	66;"	d
+IMAPX_GPIO_GPC5	head/imapx_gpio_api.h	67;"	d
+IMAPX_GPIO_GPC6	head/imapx_gpio_api.h	68;"	d
+IMAPX_GPIO_GPC7	head/imapx_gpio_api.h	69;"	d
+IMAPX_GPIO_GPD0	head/imapx_gpio_api.h	71;"	d
+IMAPX_GPIO_GPD1	head/imapx_gpio_api.h	72;"	d
+IMAPX_GPIO_GPD2	head/imapx_gpio_api.h	73;"	d
+IMAPX_GPIO_GPD3	head/imapx_gpio_api.h	74;"	d
+IMAPX_GPIO_GPD4	head/imapx_gpio_api.h	75;"	d
+IMAPX_GPIO_GPE0	head/imapx_gpio_api.h	77;"	d
+IMAPX_GPIO_GPE1	head/imapx_gpio_api.h	78;"	d
+IMAPX_GPIO_GPE10	head/imapx_gpio_api.h	87;"	d
+IMAPX_GPIO_GPE11	head/imapx_gpio_api.h	88;"	d
+IMAPX_GPIO_GPE12	head/imapx_gpio_api.h	89;"	d
+IMAPX_GPIO_GPE13	head/imapx_gpio_api.h	90;"	d
+IMAPX_GPIO_GPE14	head/imapx_gpio_api.h	91;"	d
+IMAPX_GPIO_GPE15	head/imapx_gpio_api.h	92;"	d
+IMAPX_GPIO_GPE2	head/imapx_gpio_api.h	79;"	d
+IMAPX_GPIO_GPE3	head/imapx_gpio_api.h	80;"	d
+IMAPX_GPIO_GPE4	head/imapx_gpio_api.h	81;"	d
+IMAPX_GPIO_GPE5	head/imapx_gpio_api.h	82;"	d
+IMAPX_GPIO_GPE6	head/imapx_gpio_api.h	83;"	d
+IMAPX_GPIO_GPE7	head/imapx_gpio_api.h	84;"	d
+IMAPX_GPIO_GPE8	head/imapx_gpio_api.h	85;"	d
+IMAPX_GPIO_GPE9	head/imapx_gpio_api.h	86;"	d
+IMAPX_GPIO_GPF0	head/imapx_gpio_api.h	94;"	d
+IMAPX_GPIO_GPF1	head/imapx_gpio_api.h	95;"	d
+IMAPX_GPIO_GPF2	head/imapx_gpio_api.h	96;"	d
+IMAPX_GPIO_GPF3	head/imapx_gpio_api.h	97;"	d
+IMAPX_GPIO_GPF4	head/imapx_gpio_api.h	98;"	d
+IMAPX_GPIO_GPF5	head/imapx_gpio_api.h	99;"	d
+IMAPX_GPIO_GPF6	head/imapx_gpio_api.h	100;"	d
+IMAPX_GPIO_GPF7	head/imapx_gpio_api.h	101;"	d
+IMAPX_GPIO_GPF8	head/imapx_gpio_api.h	102;"	d
+IMAPX_GPIO_GPF9	head/imapx_gpio_api.h	103;"	d
+IMAPX_GPIO_GPG0	head/imapx_gpio_api.h	105;"	d
+IMAPX_GPIO_GPG1	head/imapx_gpio_api.h	106;"	d
+IMAPX_GPIO_GPG2	head/imapx_gpio_api.h	107;"	d
+IMAPX_GPIO_GPG3	head/imapx_gpio_api.h	108;"	d
+IMAPX_GPIO_GPG4	head/imapx_gpio_api.h	109;"	d
+IMAPX_GPIO_GPG5	head/imapx_gpio_api.h	110;"	d
+IMAPX_GPIO_GPH0	head/imapx_gpio_api.h	112;"	d
+IMAPX_GPIO_GPH1	head/imapx_gpio_api.h	113;"	d
+IMAPX_GPIO_GPH2	head/imapx_gpio_api.h	114;"	d
+IMAPX_GPIO_GPH3	head/imapx_gpio_api.h	115;"	d
+IMAPX_GPIO_GPI0	head/imapx_gpio_api.h	117;"	d
+IMAPX_GPIO_GPI1	head/imapx_gpio_api.h	118;"	d
+IMAPX_GPIO_GPI10	head/imapx_gpio_api.h	127;"	d
+IMAPX_GPIO_GPI11	head/imapx_gpio_api.h	128;"	d
+IMAPX_GPIO_GPI12	head/imapx_gpio_api.h	129;"	d
+IMAPX_GPIO_GPI13	head/imapx_gpio_api.h	130;"	d
+IMAPX_GPIO_GPI2	head/imapx_gpio_api.h	119;"	d
+IMAPX_GPIO_GPI3	head/imapx_gpio_api.h	120;"	d
+IMAPX_GPIO_GPI4	head/imapx_gpio_api.h	121;"	d
+IMAPX_GPIO_GPI5	head/imapx_gpio_api.h	122;"	d
+IMAPX_GPIO_GPI6	head/imapx_gpio_api.h	123;"	d
+IMAPX_GPIO_GPI7	head/imapx_gpio_api.h	124;"	d
+IMAPX_GPIO_GPI8	head/imapx_gpio_api.h	125;"	d
+IMAPX_GPIO_GPI9	head/imapx_gpio_api.h	126;"	d
+IMAPX_GPIO_GPJ0	head/imapx_gpio_api.h	132;"	d
+IMAPX_GPIO_GPJ1	head/imapx_gpio_api.h	133;"	d
+IMAPX_GPIO_GPJ2	head/imapx_gpio_api.h	134;"	d
+IMAPX_GPIO_GPJ3	head/imapx_gpio_api.h	135;"	d
+IMAPX_GPIO_GPJ4	head/imapx_gpio_api.h	136;"	d
+IMAPX_GPIO_GPJ5	head/imapx_gpio_api.h	137;"	d
+IMAPX_GPIO_GPJ6	head/imapx_gpio_api.h	138;"	d
+IMAPX_GPIO_GPJ7	head/imapx_gpio_api.h	139;"	d
+IMAPX_GPIO_GPJ8	head/imapx_gpio_api.h	140;"	d
+IMAPX_GPIO_GPK0	head/imapx_gpio_api.h	142;"	d
+IMAPX_GPIO_GPK1	head/imapx_gpio_api.h	143;"	d
+IMAPX_GPIO_GPK10	head/imapx_gpio_api.h	152;"	d
+IMAPX_GPIO_GPK11	head/imapx_gpio_api.h	153;"	d
+IMAPX_GPIO_GPK12	head/imapx_gpio_api.h	154;"	d
+IMAPX_GPIO_GPK13	head/imapx_gpio_api.h	155;"	d
+IMAPX_GPIO_GPK14	head/imapx_gpio_api.h	156;"	d
+IMAPX_GPIO_GPK15	head/imapx_gpio_api.h	157;"	d
+IMAPX_GPIO_GPK2	head/imapx_gpio_api.h	144;"	d
+IMAPX_GPIO_GPK3	head/imapx_gpio_api.h	145;"	d
+IMAPX_GPIO_GPK4	head/imapx_gpio_api.h	146;"	d
+IMAPX_GPIO_GPK5	head/imapx_gpio_api.h	147;"	d
+IMAPX_GPIO_GPK6	head/imapx_gpio_api.h	148;"	d
+IMAPX_GPIO_GPK7	head/imapx_gpio_api.h	149;"	d
+IMAPX_GPIO_GPK8	head/imapx_gpio_api.h	150;"	d
+IMAPX_GPIO_GPK9	head/imapx_gpio_api.h	151;"	d
+IMAPX_GPIO_GPL0	head/imapx_gpio_api.h	159;"	d
+IMAPX_GPIO_GPL1	head/imapx_gpio_api.h	160;"	d
+IMAPX_GPIO_GPL10	head/imapx_gpio_api.h	169;"	d
+IMAPX_GPIO_GPL11	head/imapx_gpio_api.h	170;"	d
+IMAPX_GPIO_GPL12	head/imapx_gpio_api.h	171;"	d
+IMAPX_GPIO_GPL2	head/imapx_gpio_api.h	161;"	d
+IMAPX_GPIO_GPL3	head/imapx_gpio_api.h	162;"	d
+IMAPX_GPIO_GPL4	head/imapx_gpio_api.h	163;"	d
+IMAPX_GPIO_GPL5	head/imapx_gpio_api.h	164;"	d
+IMAPX_GPIO_GPL6	head/imapx_gpio_api.h	165;"	d
+IMAPX_GPIO_GPL7	head/imapx_gpio_api.h	166;"	d
+IMAPX_GPIO_GPL8	head/imapx_gpio_api.h	167;"	d
+IMAPX_GPIO_GPL9	head/imapx_gpio_api.h	168;"	d
+IMAPX_GPIO_GPM0	head/imapx_gpio_api.h	173;"	d
+IMAPX_GPIO_GPM1	head/imapx_gpio_api.h	174;"	d
+IMAPX_GPIO_GPM10	head/imapx_gpio_api.h	183;"	d
+IMAPX_GPIO_GPM11	head/imapx_gpio_api.h	184;"	d
+IMAPX_GPIO_GPM12	head/imapx_gpio_api.h	185;"	d
+IMAPX_GPIO_GPM13	head/imapx_gpio_api.h	186;"	d
+IMAPX_GPIO_GPM14	head/imapx_gpio_api.h	187;"	d
+IMAPX_GPIO_GPM15	head/imapx_gpio_api.h	188;"	d
+IMAPX_GPIO_GPM2	head/imapx_gpio_api.h	175;"	d
+IMAPX_GPIO_GPM3	head/imapx_gpio_api.h	176;"	d
+IMAPX_GPIO_GPM4	head/imapx_gpio_api.h	177;"	d
+IMAPX_GPIO_GPM5	head/imapx_gpio_api.h	178;"	d
+IMAPX_GPIO_GPM6	head/imapx_gpio_api.h	179;"	d
+IMAPX_GPIO_GPM7	head/imapx_gpio_api.h	180;"	d
+IMAPX_GPIO_GPM8	head/imapx_gpio_api.h	181;"	d
+IMAPX_GPIO_GPM9	head/imapx_gpio_api.h	182;"	d
+IMAPX_GPIO_GPN0	head/imapx_gpio_api.h	190;"	d
+IMAPX_GPIO_GPN1	head/imapx_gpio_api.h	191;"	d
+IMAPX_GPIO_GPN10	head/imapx_gpio_api.h	200;"	d
+IMAPX_GPIO_GPN11	head/imapx_gpio_api.h	201;"	d
+IMAPX_GPIO_GPN12	head/imapx_gpio_api.h	202;"	d
+IMAPX_GPIO_GPN2	head/imapx_gpio_api.h	192;"	d
+IMAPX_GPIO_GPN3	head/imapx_gpio_api.h	193;"	d
+IMAPX_GPIO_GPN4	head/imapx_gpio_api.h	194;"	d
+IMAPX_GPIO_GPN5	head/imapx_gpio_api.h	195;"	d
+IMAPX_GPIO_GPN6	head/imapx_gpio_api.h	196;"	d
+IMAPX_GPIO_GPN7	head/imapx_gpio_api.h	197;"	d
+IMAPX_GPIO_GPN8	head/imapx_gpio_api.h	198;"	d
+IMAPX_GPIO_GPN9	head/imapx_gpio_api.h	199;"	d
+IMAPX_GPIO_GPO0	head/imapx_gpio_api.h	204;"	d
+IMAPX_GPIO_GPO1	head/imapx_gpio_api.h	205;"	d
+IMAPX_GPIO_GPO10	head/imapx_gpio_api.h	214;"	d
+IMAPX_GPIO_GPO11	head/imapx_gpio_api.h	215;"	d
+IMAPX_GPIO_GPO12	head/imapx_gpio_api.h	216;"	d
+IMAPX_GPIO_GPO13	head/imapx_gpio_api.h	217;"	d
+IMAPX_GPIO_GPO14	head/imapx_gpio_api.h	218;"	d
+IMAPX_GPIO_GPO15	head/imapx_gpio_api.h	219;"	d
+IMAPX_GPIO_GPO2	head/imapx_gpio_api.h	206;"	d
+IMAPX_GPIO_GPO3	head/imapx_gpio_api.h	207;"	d
+IMAPX_GPIO_GPO4	head/imapx_gpio_api.h	208;"	d
+IMAPX_GPIO_GPO5	head/imapx_gpio_api.h	209;"	d
+IMAPX_GPIO_GPO6	head/imapx_gpio_api.h	210;"	d
+IMAPX_GPIO_GPO7	head/imapx_gpio_api.h	211;"	d
+IMAPX_GPIO_GPO8	head/imapx_gpio_api.h	212;"	d
+IMAPX_GPIO_GPO9	head/imapx_gpio_api.h	213;"	d
+IMAPX_GPIO_GPP0	head/imapx_gpio_api.h	221;"	d
+IMAPX_GPIO_GPP1	head/imapx_gpio_api.h	222;"	d
+IMAPX_GPIO_GPP10	head/imapx_gpio_api.h	231;"	d
+IMAPX_GPIO_GPP11	head/imapx_gpio_api.h	232;"	d
+IMAPX_GPIO_GPP2	head/imapx_gpio_api.h	223;"	d
+IMAPX_GPIO_GPP3	head/imapx_gpio_api.h	224;"	d
+IMAPX_GPIO_GPP4	head/imapx_gpio_api.h	225;"	d
+IMAPX_GPIO_GPP5	head/imapx_gpio_api.h	226;"	d
+IMAPX_GPIO_GPP6	head/imapx_gpio_api.h	227;"	d
+IMAPX_GPIO_GPP7	head/imapx_gpio_api.h	228;"	d
+IMAPX_GPIO_GPP8	head/imapx_gpio_api.h	229;"	d
+IMAPX_GPIO_GPP9	head/imapx_gpio_api.h	230;"	d
+IMAPX_GPIO_GPQ0	head/imapx_gpio_api.h	234;"	d
+IMAPX_GPIO_GPQ1	head/imapx_gpio_api.h	235;"	d
+IMAPX_GPIO_GPQ2	head/imapx_gpio_api.h	236;"	d
+IMAPX_GPIO_GPQ3	head/imapx_gpio_api.h	237;"	d
+IMAPX_GPIO_GPQ4	head/imapx_gpio_api.h	238;"	d
+IMAPX_GPIO_GPQ5	head/imapx_gpio_api.h	239;"	d
+IMAPX_GPIO_GPR0	head/imapx_gpio_api.h	241;"	d
+IMAPX_GPIO_GPR1	head/imapx_gpio_api.h	242;"	d
+IMAPX_GPIO_GPR10	head/imapx_gpio_api.h	251;"	d
+IMAPX_GPIO_GPR11	head/imapx_gpio_api.h	252;"	d
+IMAPX_GPIO_GPR12	head/imapx_gpio_api.h	253;"	d
+IMAPX_GPIO_GPR13	head/imapx_gpio_api.h	254;"	d
+IMAPX_GPIO_GPR14	head/imapx_gpio_api.h	255;"	d
+IMAPX_GPIO_GPR15	head/imapx_gpio_api.h	256;"	d
+IMAPX_GPIO_GPR2	head/imapx_gpio_api.h	243;"	d
+IMAPX_GPIO_GPR3	head/imapx_gpio_api.h	244;"	d
+IMAPX_GPIO_GPR4	head/imapx_gpio_api.h	245;"	d
+IMAPX_GPIO_GPR5	head/imapx_gpio_api.h	246;"	d
+IMAPX_GPIO_GPR6	head/imapx_gpio_api.h	247;"	d
+IMAPX_GPIO_GPR7	head/imapx_gpio_api.h	248;"	d
+IMAPX_GPIO_GPR8	head/imapx_gpio_api.h	249;"	d
+IMAPX_GPIO_GPR9	head/imapx_gpio_api.h	250;"	d
+IMAPX_GPIO_GROUP_ERROR	imapx_gpio.c	89;"	d	file:
+__GPIO_BASE_H__	base/gpio_base.h	25;"	d
+__GPIO_BASE_PRIVATE_H__	base/gpio_base_private.h	25;"	d
+__IMAPX_GPIO_H__	imapx_gpio.h	26;"	d
+__imapx_name_to_gpio	imapx_gpio.c	/^EXPORT_SYMBOL(__imapx_name_to_gpio);$/;"	v
+__imapx_name_to_gpio	imapx_gpio.c	/^unsigned int __imapx_name_to_gpio(const char *gpio_name)$/;"	f
+con	base/gpio_base_private.h	/^	void __iomem *con;$/;"	m	struct:ig_base_group
+count	base/gpio_base_private.h	/^	unsigned int count;$/;"	m	struct:ig_base_group
+dat	base/gpio_base_private.h	/^	void __iomem *dat;$/;"	m	struct:ig_base_group
+feature	base/gpio_base_private.h	/^	unsigned int feature;$/;"	m	struct:ig_base_gpio_spec
+group	imapx_gpio.h	/^	unsigned int group;$/;"	m	struct:imapx_gpio_name_map
+group_name_mark	imapx_gpio.h	/^	char group_name_mark;$/;"	m	struct:imapx_gpio_name_map
+ig_base_a_spec	base/gpio_base.c	/^ig_base_a_spec[IG_BASE_GET_COUNT(IG_BASE_A)] = {	\/* GPA *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_all_groups	base/gpio_base.c	/^ig_base_all_groups[IG_BASE_COUNT] = {$/;"	v	typeref:struct:ig_base_group	file:
+ig_base_b_spec	base/gpio_base.c	/^ig_base_b_spec[IG_BASE_GET_COUNT(IG_BASE_B)] = {	\/* GPB *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_c_spec	base/gpio_base.c	/^ig_base_c_spec[IG_BASE_GET_COUNT(IG_BASE_C)] = {	\/* GPC *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_clear_pend	base/gpio_base.c	/^EXPORT_SYMBOL(ig_base_clear_pend);$/;"	v
+ig_base_clear_pend	base/gpio_base.c	/^void ig_base_clear_pend(unsigned int group, unsigned int id)$/;"	f
+ig_base_d_spec	base/gpio_base.c	/^ig_base_d_spec[IG_BASE_GET_COUNT(IG_BASE_D)] = {	\/* GPD *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_e_spec	base/gpio_base.c	/^ig_base_e_spec[IG_BASE_GET_COUNT(IG_BASE_E)] = {	\/* GPE *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_eintg_lock	base/gpio_base.c	/^static spinlock_t ig_base_eintg_lock = SPIN_LOCK_UNLOCKED;$/;"	v	file:
+ig_base_f_spec	base/gpio_base.c	/^ig_base_f_spec[IG_BASE_GET_COUNT(IG_BASE_F)] = {	\/* GPF *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_g_spec	base/gpio_base.c	/^ig_base_g_spec[IG_BASE_GET_COUNT(IG_BASE_G)] = {	\/* GPG *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_getcfg	base/gpio_base.c	/^EXPORT_SYMBOL(ig_base_getcfg);$/;"	v
+ig_base_getcfg	base/gpio_base.c	/^unsigned int ig_base_getcfg(unsigned int group, unsigned int id)$/;"	f
+ig_base_getpin	base/gpio_base.c	/^EXPORT_SYMBOL(ig_base_getpin);$/;"	v
+ig_base_getpin	base/gpio_base.c	/^unsigned int ig_base_getpin(unsigned int group, unsigned int id)$/;"	f
+ig_base_getpull	base/gpio_base.c	/^EXPORT_SYMBOL(ig_base_getpull);$/;"	v
+ig_base_getpull	base/gpio_base.c	/^unsigned int ig_base_getpull(unsigned int group, unsigned int id)$/;"	f
+ig_base_gpio_spec	base/gpio_base_private.h	/^struct ig_base_gpio_spec {$/;"	s
+ig_base_group	base/gpio_base_private.h	/^struct ig_base_group {$/;"	s
+ig_base_h_spec	base/gpio_base.c	/^ig_base_h_spec[IG_BASE_GET_COUNT(IG_BASE_H)] = {	\/* GPH *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_i_spec	base/gpio_base.c	/^ig_base_i_spec[IG_BASE_GET_COUNT(IG_BASE_I)] = {	\/* GPI *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_is_pending	base/gpio_base.c	/^EXPORT_SYMBOL(ig_base_is_pending);$/;"	v
+ig_base_is_pending	base/gpio_base.c	/^unsigned int ig_base_is_pending(unsigned int group, $/;"	f
+ig_base_is_sleep	base/gpio_base.c	/^EXPORT_SYMBOL(ig_base_is_sleep);$/;"	v
+ig_base_is_sleep	base/gpio_base.c	/^unsigned int ig_base_is_sleep(unsigned int group, unsigned int id)$/;"	f
+ig_base_j_spec	base/gpio_base.c	/^ig_base_j_spec[IG_BASE_GET_COUNT(IG_BASE_J)] = {	\/* GPJ *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_k_spec	base/gpio_base.c	/^ig_base_k_spec[IG_BASE_GET_COUNT(IG_BASE_K)] = {	\/* GPK *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_l_spec	base/gpio_base.c	/^ig_base_l_spec[IG_BASE_GET_COUNT(IG_BASE_L)] = {	\/* GPL *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_m_spec	base/gpio_base.c	/^ig_base_m_spec[IG_BASE_GET_COUNT(IG_BASE_M)] = {	\/* GPM *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_mask_irq	base/gpio_base.c	/^EXPORT_SYMBOL(ig_base_mask_irq);$/;"	v
+ig_base_mask_irq	base/gpio_base.c	/^void ig_base_mask_irq(unsigned int group, unsigned int id)$/;"	f
+ig_base_n_spec	base/gpio_base.c	/^ig_base_n_spec[IG_BASE_GET_COUNT(IG_BASE_N)] = {	\/* GPN *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_o_spec	base/gpio_base.c	/^ig_base_o_spec[IG_BASE_GET_COUNT(IG_BASE_O)] = {	\/* GPO *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_p_spec	base/gpio_base.c	/^ig_base_p_spec[IG_BASE_GET_COUNT(IG_BASE_P)] = {	\/* GPP *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_pull	base/gpio_base.c	/^EXPORT_SYMBOL(ig_base_pull);$/;"	v
+ig_base_pull	base/gpio_base.c	/^void ig_base_pull(unsigned int group, unsigned int id, unsigned int en)$/;"	f
+ig_base_q_spec	base/gpio_base.c	/^ig_base_q_spec[IG_BASE_GET_COUNT(IG_BASE_Q)] = {	\/* GPQ *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_r_spec	base/gpio_base.c	/^ig_base_r_spec[IG_BASE_GET_COUNT(IG_BASE_R)] = {	\/* GPR *\/$/;"	v	typeref:struct:ig_base_gpio_spec	file:
+ig_base_setcfg	base/gpio_base.c	/^EXPORT_SYMBOL(ig_base_setcfg);$/;"	v
+ig_base_setcfg	base/gpio_base.c	/^unsigned int ig_base_setcfg(unsigned int group, unsigned int id, $/;"	f
+ig_base_setirq	base/gpio_base.c	/^EXPORT_SYMBOL(ig_base_setirq);$/;"	v
+ig_base_setirq	base/gpio_base.c	/^unsigned int ig_base_setirq(unsigned int group, unsigned int id, $/;"	f
+ig_base_setpin	base/gpio_base.c	/^EXPORT_SYMBOL(ig_base_setpin);$/;"	v
+ig_base_setpin	base/gpio_base.c	/^unsigned int ig_base_setpin(unsigned int group, $/;"	f
+ig_base_unmask_irq	base/gpio_base.c	/^EXPORT_SYMBOL(ig_base_unmask_irq);$/;"	v
+ig_base_unmask_irq	base/gpio_base.c	/^void ig_base_unmask_irq(unsigned int group, unsigned int id)$/;"	f
+imapx_gpio_clear_pend	imapx_gpio.c	/^EXPORT_SYMBOL(imapx_gpio_clear_pend);$/;"	v
+imapx_gpio_clear_pend	imapx_gpio.c	/^void imapx_gpio_clear_pend(unsigned int gpio)$/;"	f
+imapx_gpio_getcfg	imapx_gpio.c	/^EXPORT_SYMBOL(imapx_gpio_getcfg);$/;"	v
+imapx_gpio_getcfg	imapx_gpio.c	/^unsigned int imapx_gpio_getcfg(unsigned int gpio)$/;"	f
+imapx_gpio_getpin	imapx_gpio.c	/^EXPORT_SYMBOL(imapx_gpio_getpin);$/;"	v
+imapx_gpio_getpin	imapx_gpio.c	/^unsigned int imapx_gpio_getpin(unsigned int gpio)$/;"	f
+imapx_gpio_getpull	imapx_gpio.c	/^EXPORT_SYMBOL(imapx_gpio_getpull);$/;"	v
+imapx_gpio_getpull	imapx_gpio.c	/^unsigned int imapx_gpio_getpull(unsigned int gpio)$/;"	f
+imapx_gpio_is_pending	imapx_gpio.c	/^EXPORT_SYMBOL(imapx_gpio_is_pending);$/;"	v
+imapx_gpio_is_pending	imapx_gpio.c	/^unsigned int imapx_gpio_is_pending(unsigned int gpio, unsigned int clear)$/;"	f
+imapx_gpio_is_sleep	imapx_gpio.c	/^EXPORT_SYMBOL(imapx_gpio_is_sleep);$/;"	v
+imapx_gpio_is_sleep	imapx_gpio.c	/^unsigned int imapx_gpio_is_sleep(unsigned int gpio)$/;"	f
+imapx_gpio_mask_irq	imapx_gpio.c	/^EXPORT_SYMBOL(imapx_gpio_mask_irq);$/;"	v
+imapx_gpio_mask_irq	imapx_gpio.c	/^void imapx_gpio_mask_irq(unsigned int gpio)$/;"	f
+imapx_gpio_name_all_maps	imapx_gpio.c	/^imapx_gpio_name_all_maps[IG_BASE_COUNT] = {$/;"	v	typeref:struct:imapx_gpio_name_map	file:
+imapx_gpio_name_map	imapx_gpio.h	/^struct imapx_gpio_name_map {$/;"	s
+imapx_gpio_pull	imapx_gpio.c	/^EXPORT_SYMBOL(imapx_gpio_pull);$/;"	v
+imapx_gpio_pull	imapx_gpio.c	/^void imapx_gpio_pull(unsigned int gpio, unsigned int en)$/;"	f
+imapx_gpio_setcfg	imapx_gpio.c	/^EXPORT_SYMBOL(imapx_gpio_setcfg);$/;"	v
+imapx_gpio_setcfg	imapx_gpio.c	/^unsigned int imapx_gpio_setcfg(unsigned int gpio, unsigned int cfg, $/;"	f
+imapx_gpio_setirq	imapx_gpio.c	/^EXPORT_SYMBOL(imapx_gpio_setirq);$/;"	v
+imapx_gpio_setirq	imapx_gpio.c	/^unsigned int imapx_gpio_setirq(unsigned int gpio, unsigned int flt, $/;"	f
+imapx_gpio_setpin	imapx_gpio.c	/^EXPORT_SYMBOL(imapx_gpio_setpin);$/;"	v
+imapx_gpio_setpin	imapx_gpio.c	/^unsigned int imapx_gpio_setpin(unsigned int gpio, unsigned int data)$/;"	f
+imapx_gpio_unmask_irq	imapx_gpio.c	/^EXPORT_SYMBOL(imapx_gpio_unmask_irq);$/;"	v
+imapx_gpio_unmask_irq	imapx_gpio.c	/^void imapx_gpio_unmask_irq(unsigned int gpio)$/;"	f
+lock	base/gpio_base_private.h	/^	spinlock_t lock;$/;"	m	struct:ig_base_group
+pud	base/gpio_base_private.h	/^	void __iomem *pud;$/;"	m	struct:ig_base_group
+spec	base/gpio_base_private.h	/^	const struct ig_base_gpio_spec *spec;$/;"	m	struct:ig_base_group	typeref:struct:ig_base_group::ig_base_gpio_spec

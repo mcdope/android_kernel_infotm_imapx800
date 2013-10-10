@@ -1,0 +1,13 @@
+obj-$(CONFIG_BOSCH_BMA150)      += bma250.o
+#obj-y      += bq24153.o
+obj-$(CONFIG_CHARGER_BQ)      += bq2415x_charger.o
+obj-$(CONFIG_BOSCH_DMARD08) += dmard08.o
+obj-$(CONFIG_BOSCH_DMT06) += dmt06.o
+obj-$(CONFIG_BOSCH_LSM303DLHC_ACC) += lsm303dlhc_acc.o
+obj-$(CONFIG_BOSCH_LSM303DLHC_MAG) += lsm303dlhc_mag.o
+obj-$(CONFIG_BOSCH_AFA750) += afa750.o
+obj-$(CONFIG_FSL_MMA7660)      += mma7660.o
+obj-$(CONFIG_FSL_MMA845X)      += mma845x.o
+afa750-objs                     := afa750-i2c.o afa750-poll.o
+obj-$(CONFIG_BOSCH_MC32X0)    += mc32x0.o
+obj-$(CONFIG_BOSCH_STK831X)   += stk831x.o

@@ -1,0 +1,13 @@
+#
+# Kconfig InfotmMedia g2d i800 driver.
+#
+# Copyright (c) 2009~2014 ShangHai Infotm Ltd all rights reserved.
+#
+#
+
+menuconfig INFOTM_MEDIA_ISP_I800_SUPPORT
+        bool "InfotmMedia ISP-i800 driver support"
+        default y
+        ---help---
+		ISP-i800 driver.
+

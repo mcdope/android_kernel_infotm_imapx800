@@ -1,0 +1,21 @@
+#
+# Kconfig InfotmMedia ids i800 driver.
+#
+# Copyright (c) 2009~2014 ShangHai Infotm Ltd all rights reserved.
+#
+#
+
+menuconfig INFOTM_MEDIA_IDS_I800_SUPPORT
+        bool "InfotmMedia ids-i800 driver support"
+        default y
+        ---help---
+		ids-i800 driver support
+
+if INFOTM_MEDIA_IDS_I800_SUPPORT
+
+config IDSDRV_EARLY_SUSPEND
+	bool "use early suspend"
+	depends on INFOTM_MEDIA_IDS_I800_SUPPORT
+	default y
+
+endif   # INFOTM_MEDIA_IDS_I800_SUPPORT

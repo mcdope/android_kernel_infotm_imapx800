@@ -1,0 +1,13 @@
+#
+# Kconfig InfotmMedia ipc driver.
+#
+# Copyright (c) 2009~2014 ShangHai Infotm Ltd all rights reserved.
+#
+#
+
+menuconfig INFOTM_MEDIA_DBT_SUPPORT
+        bool "InfotmMedia DBT driver support"
+        default y
+        ---help---
+		dbt driver support
+

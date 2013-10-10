@@ -1,0 +1,256 @@
+Index: kernel/time/timekeeping.c
+===================================================================
+--- kernel/time/timekeeping.c	(revision 268)
++++ kernel/time/timekeeping.c	(working copy)
+@@ -67,6 +67,7 @@
+ 	u64 tmp, ntpinterval;
+ 
+ 	timekeeper.clock = clock;
++	printk(KERN_ERR "%s%d\n", __func__, __LINE__);
+ 	clock->cycle_last = clock->read(clock);
+ 
+ 	/* Do the ns -> cycle conversion first, using original mult */
+@@ -79,6 +80,8 @@
+ 		tmp = 1;
+ 
+ 	interval = (cycle_t) tmp;
++	printk(KERN_ERR "interval: %llx, NTP: %ld, HZ %d, s: %d, mu: %d\n", tmp, 
++				NSEC_PER_SEC, NTP_INTERVAL_FREQ, clock->shift, clock->mult);
+ 	timekeeper.cycle_interval = interval;
+ 
+ 	/* Go back from cycles -> shifted ns */
+@@ -111,6 +114,8 @@
+ 	clock = timekeeper.clock;
+ 	cycle_now = clock->read(clock);
+ 
++	printk(KERN_ERR "now: %llx, last: %llx, msk: %llx\n", cycle_now, clock->cycle_last, clock->mask);
++
+ 	/* calculate the delta since the last update_wall_time: */
+ 	cycle_delta = (cycle_now - clock->cycle_last) & clock->mask;
+ 
+@@ -194,6 +199,7 @@
+ 	clock = timekeeper.clock;
+ 	cycle_now = clock->read(clock);
+ 	cycle_delta = (cycle_now - clock->cycle_last) & clock->mask;
++	printk(KERN_ERR "%s%d\n", __func__, __LINE__);
+ 	clock->cycle_last = cycle_now;
+ 
+ 	nsec = clocksource_cyc2ns(cycle_delta, timekeeper.mult,
+@@ -283,6 +289,8 @@
+ 
+ 	} while (read_seqretry(&xtime_lock, seq));
+ 
++		printk(KERN_ERR "tomono: %ld, ns: %lld, ori: %ld\n", 
++					tomono.tv_nsec, nsecs, ts->tv_nsec);
+ 	set_normalized_timespec(ts, ts->tv_sec + tomono.tv_sec,
+ 				ts->tv_nsec + tomono.tv_nsec + nsecs);
+ }
+@@ -676,6 +684,7 @@
+ 		__timekeeping_inject_sleeptime(&ts);
+ 	}
+ 	/* re-base the last cycle value */
++	printk(KERN_ERR "%s%d\n", __func__, __LINE__);
+ 	timekeeper.clock->cycle_last = timekeeper.clock->read(timekeeper.clock);
+ 	timekeeper.ntp_error = 0;
+ 	timekeeping_suspended = 0;
+@@ -827,6 +836,8 @@
+ 	/* Accumulate one shifted interval */
+ 	offset -= timekeeper.cycle_interval << shift;
+ 	timekeeper.clock->cycle_last += timekeeper.cycle_interval << shift;
++	printk(KERN_ERR "%s%d: %llx, intv: %llx, shift: %d\n", __func__, __LINE__,
++				timekeeper.clock->cycle_last, timekeeper.cycle_interval, shift);
+ 
+ 	timekeeper.xtime_nsec += timekeeper.xtime_interval << shift;
+ 	while (timekeeper.xtime_nsec >= nsecps) {
+@@ -892,6 +903,8 @@
+ 	/* Bound shift to one less then what overflows tick_length */
+ 	maxshift = (8*sizeof(tick_length) - (ilog2(tick_length)+1)) - 1;
+ 	shift = min(shift, maxshift);
++
++	printk(KERN_ERR "offset: %llx, inter: %llx\n", offset, timekeeper.cycle_interval);
+ 	while (offset >= timekeeper.cycle_interval) {
+ 		offset = logarithmic_accumulation(offset, shift);
+ 		if(offset < timekeeper.cycle_interval<<shift)
+Index: kernel/time/clocksource.c
+===================================================================
+--- kernel/time/clocksource.c	(revision 268)
++++ kernel/time/clocksource.c	(working copy)
+@@ -36,6 +36,7 @@
+ 		      u64 start_tstamp)
+ {
+ 	tc->cc = cc;
++	printk(KERN_ERR "%s%d\n", __func__, __LINE__);
+ 	tc->cycle_last = cc->read(cc);
+ 	tc->nsec = start_tstamp;
+ }
+@@ -67,6 +68,7 @@
+ 	ns_offset = cyclecounter_cyc2ns(tc->cc, cycle_delta);
+ 
+ 	/* update time stamp of timecounter_read_delta() call: */
++	printk(KERN_ERR "%s%d\n", __func__, __LINE__);
+ 	tc->cycle_last = cycle_now;
+ 
+ 	return ns_offset;
+Index: kernel/time.c
+===================================================================
+--- kernel/time.c	(revision 268)
++++ kernel/time.c	(working copy)
+@@ -354,6 +354,10 @@
+  */
+ void set_normalized_timespec(struct timespec *ts, time_t sec, s64 nsec)
+ {
++	static long unsigned tt = 0, tm = 0, t;
++
++//	printk(KERN_ERR "sec: %ld, nsec: %lld\n", sec, nsec);
++	t = jiffies;
+ 	while (nsec >= NSEC_PER_SEC) {
+ 		/*
+ 		 * The following asm() prevents the compiler from
+@@ -369,6 +373,14 @@
+ 		nsec += NSEC_PER_SEC;
+ 		--sec;
+ 	}
++
++	tt += (jiffies - t);
++	tm += (jiffies - t);
++
++	if(tm > 500) {
++	  printk(KERN_ERR " elapse: %ld\n", tt);
++	  tm = 0;
++	}
+ 	ts->tv_sec = sec;
+ 	ts->tv_nsec = nsec;
+ }
+Index: kernel/printk.c
+===================================================================
+--- kernel/printk.c	(revision 268)
++++ kernel/printk.c	(working copy)
+@@ -980,9 +980,9 @@
+ 
+ 				t = cpu_clock(printk_cpu);
+ 				nanosec_rem = do_div(t, 1000000000);
+-				tlen = sprintf(tbuf, "[%5lu.%06lu] ",
++				tlen = sprintf(tbuf, "[%5lu.%06lu, %05d] ",
+ 						(unsigned long) t,
+-						nanosec_rem / 1000);
++						nanosec_rem / 1000, jiffies);
+ 
+ 				for (tp = tbuf; tp < tbuf + tlen; tp++)
+ 					emit_log_char(*tp);
+Index: arch/arm/boot/Makefile
+===================================================================
+--- arch/arm/boot/Makefile	(revision 268)
++++ arch/arm/boot/Makefile	(working copy)
+@@ -75,6 +75,7 @@
+ $(obj)/uImage:	$(obj)/zImage FORCE
+ 	$(call if_changed,uimage)
+ 	@echo '  Image $@ is ready'
++	cp arch/arm/boot/uImage /mnt/hgfs/linux
+ 
+ $(obj)/bootp/bootp: $(obj)/zImage initrd FORCE
+ 	$(Q)$(MAKE) $(build)=$(obj)/bootp $@
+Index: arch/arm/Kconfig
+===================================================================
+--- arch/arm/Kconfig	(revision 268)
++++ arch/arm/Kconfig	(working copy)
+@@ -54,7 +54,7 @@
+ 
+ config ARCH_USES_GETTIMEOFFSET
+ 	bool
+-	default y 
++	default n 
+ 
+ config ARCH_USES_GETTIMEOFFSET
+ 	bool
+@@ -936,7 +936,7 @@
+ 		select ARM_AMBA
+ 		select CLKDEV_LOOKUP
+ 		select CPU_V7
+-		select ARCH_USES_GETTIMEOFFSET
++#		select ARCH_USES_GETTIMEOFFSET
+ 		select GENERIC_CLOCKEVENTS
+ 		select ARM_GIC
+ 		select ARCH_REQUIRE_GPIOLIB
+@@ -1398,7 +1398,7 @@
+ config SMP
+ 	bool "Symmetric Multi-Processing (EXPERIMENTAL)"
+ 	depends on EXPERIMENTAL && (REALVIEW_EB_ARM11MP || REALVIEW_EB_A9MP ||\
+-		 MACH_REALVIEW_PB11MP || MACH_REALVIEW_PBX || ARCH_OMAP4 || ARCH_IMAPX800)
++		 MACH_REALVIEW_PB11MP || MACH_REALVIEW_PBX || ARCH_OMAP4)
+ 	depends on GENERIC_CLOCKEVENTS
+ 	select USE_GENERIC_SMP_HELPERS
+ 	select HAVE_ARM_SCU if (ARCH_REALVIEW || ARCH_OMAP4 || ARCH_IMAPX800)
+Index: arch/arm/mach-imapx800/time.c
+===================================================================
+--- arch/arm/mach-imapx800/time.c	(revision 268)
++++ arch/arm/mach-imapx800/time.c	(working copy)
+@@ -104,8 +104,8 @@
+ 
+ static struct clock_event_device imap_clkevt = {
+ 	.name		= "mtu_1",
+-	.features	= CLOCK_EVT_FEAT_ONESHOT,
+-	.shift		= 32,
++	.features	= CLOCK_EVT_FEAT_PERIODIC,
++//	.shift		= 32,
+ 	.rating		= 200,
+ 	.set_mode	= imapx_clkevt_mode,
+ 	.set_next_event	= imapx_clkevt_next,
+@@ -121,7 +121,7 @@
+ 
+ 	__raw_readl(timer_reg_base + TIMER0_EOI);
+ 	evdev->event_handler(evdev);
+-
++//	timer_tick();
+ 	return IRQ_HANDLED;
+ }
+ 
+@@ -155,8 +155,10 @@
+ 	timerclock = (pclk / ((PRESCALER + 1)*DIVIDER));
+ 	timer_usec_ticks = timer_mask_usec_ticks(((PRESCALER + 1)*DIVIDER), pclk);
+ 
+-	tcnt = timerclock / (HZ);
++	tcnt = pclk / (HZ);
+ 
++	printk(KERN_ERR "pclk=%d, tcnt=%d\n", pclk, tcnt);
++
+ 	/* timers reload after counting zero, so reduce the count by 1 */
+ 	tcnt--;
+ 	timer_startval = tcnt;
+@@ -196,6 +198,6 @@
+ 
+ struct sys_timer imapx800_init_timer = {
+ 	.init		= imapx_timer_init,
+-	.offset		= imapx_gettimeoffset,
++//	.offset		= imapx_gettimeoffset,
+ 	.resume		= imapx_timer_setup
+ };
+Index: Makefile
+===================================================================
+--- Makefile	(revision 268)
++++ Makefile	(working copy)
+@@ -193,7 +193,7 @@
+ # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
+ export KBUILD_BUILDHOST := $(SUBARCH)
+ ARCH		?= arm
+-CROSS_COMPILE	?= ${ARM_CPL_EABI440}
++CROSS_COMPILE	?= /home/csl/kernel_plat/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
+ 
+ # Architecture as present in compile.h
+ UTS_MACHINE 	:= $(ARCH)
+
+
+
+
+
+ ----by warits Feb, 27, 2012
+
+The original timer ported from 2.6.35 do not work properly on 3.0.8.
+
+
+1. The one shot mode will stuck in the middle of the booting process,
+   so I changed to periodic mode.
+
+2. the ARCH_USES_GETTIMEOFFSET result in cycle_last larger than cycle_now,
+   which is not reasonable, so I disabled this option.
+
+

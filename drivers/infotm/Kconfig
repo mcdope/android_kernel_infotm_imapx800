@@ -1,0 +1,19 @@
+#
+# DSP subsystem configuration
+#
+
+menuconfig INFOTM_SPECIAL
+	bool "InfoTM special files and drivers"
+	default n
+	help
+	  InfoTM special files and drivers support
+
+if INFOTM_SPECIAL
+
+source "drivers/infotm/dsp/Kconfig"
+source "drivers/infotm/items/Kconfig"
+source "drivers/infotm/uboot/Kconfig"
+source "drivers/infotm/led/Kconfig"
+
+endif
+

@@ -1,0 +1,6 @@
+config CRYPTO_DEV_IMAPX
+	tristate "imapx crypto"
+	depends on ARCH_IMAPX800
+	help
+            for imapx cryto driver (imapx820)
+

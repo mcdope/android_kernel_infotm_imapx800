@@ -1,0 +1,127 @@
+#
+# Logo configuration
+#
+
+menuconfig LOGO
+	bool "Bootup logo"
+	depends on FB || SGI_NEWPORT_CONSOLE
+	help
+	  Enable and select frame buffer bootup logos.
+
+if LOGO
+
+menuconfig IG_OEM_LOGO
+	bool "enable kernel logo"
+	default y
+
+if IG_OEM_LOGO
+
+choice
+prompt "choose logo"
+config IG_LOGO_DEFAULT
+	bool "default litte fat pungin"
+	select LOGO_LINUX_CLUT224
+config IG_LOGO_ALT
+	bool "use an alternate OEM logo"
+	help
+	  We use imagemagick tools to generate an OEM logo.
+	  Install the imagemagick pakage before you choose this option.
+	  You can use the following command line to get this software:
+	   $ sudo apt-get install imagemagick
+	  
+	  When this tool is ready, you can compile any picture as
+	  your kernel logo. Simply put your picture into
+	  drivers/video/infotm/logos/. and complete the path. This
+	  is an easy way to create logo. You need not mind the format
+	  of the picture. You also need not mind the size of the
+	  picture, even if it is larger than your LCD screen.
+
+	  Try it! Good luck :)
+endchoice
+
+config IG_LOGO_PATH
+	string "choose a picture"
+	depends on IG_LOGO_ALT
+	default "bird.jpg"
+	help
+	  Input the picture name here. If you want to add a new picture,
+	  you must put it to drivers/video/infotm/logos/.
+
+endif
+
+config FB_LOGO_EXTRA
+	bool
+	depends on FB=y
+	default y if SPU_BASE
+
+config LOGO_LINUX_MONO
+	bool "Standard black and white Linux logo"
+	depends on IG_LOGO_DEFAULT
+	default y
+
+config LOGO_LINUX_VGA16
+	bool "Standard 16-color Linux logo"
+	depends on IG_LOGO_DEFAULT
+	default y
+
+config LOGO_LINUX_CLUT224
+	bool "Standard 224-color Linux logo"
+	depends on IG_LOGO_DEFAULT
+	default y
+
+config LOGO_BLACKFIN_VGA16
+	bool "16-colour Blackfin Processor Linux logo"
+	depends on BLACKFIN
+	default y
+
+config LOGO_BLACKFIN_CLUT224
+	bool "224-colour Blackfin Processor Linux logo"
+	depends on BLACKFIN
+	default y
+
+config LOGO_DEC_CLUT224
+	bool "224-color Digital Equipment Corporation Linux logo"
+	depends on MACH_DECSTATION || ALPHA
+	default y
+
+config LOGO_MAC_CLUT224
+	bool "224-color Macintosh Linux logo"
+	depends on MAC
+	default y
+
+config LOGO_PARISC_CLUT224
+	bool "224-color PA-RISC Linux logo"
+	depends on PARISC
+	default y
+
+config LOGO_SGI_CLUT224
+	bool "224-color SGI Linux logo"
+	depends on SGI_IP22 || SGI_IP27 || SGI_IP32 || X86_VISWS
+	default y
+
+config LOGO_SUN_CLUT224
+	bool "224-color Sun Linux logo"
+	depends on SPARC
+	default y
+
+config LOGO_SUPERH_MONO
+	bool "Black and white SuperH Linux logo"
+	depends on SUPERH
+	default y
+
+config LOGO_SUPERH_VGA16
+	bool "16-color SuperH Linux logo"
+	depends on SUPERH
+	default y
+
+config LOGO_SUPERH_CLUT224
+	bool "224-color SuperH Linux logo"
+	depends on SUPERH
+	default y
+
+config LOGO_M32R_CLUT224
+	bool "224-color M32R Linux logo"
+	depends on M32R
+	default y
+
+endif # LOGO

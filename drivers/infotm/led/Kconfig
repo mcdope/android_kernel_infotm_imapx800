@@ -1,0 +1,28 @@
+#
+# Kconfig of led.
+#
+# Copyright 2012 InfoTM, all rights reserved.
+#
+# Sololz <sololz.luo@gmail.com> or <sololz.luo@infotmic.com.cn>.
+#
+
+menuconfig IMAPX_LED
+        bool "LED support"
+        depends on ARCH_IMAPX800
+        default n
+
+if IMAPX_LED
+
+config LED_WORKING_PIN
+        int "Working LED pin"
+        default "-1"
+
+config LED_SUSPEND_PIN
+        int "Suspend LED pin"
+        default "-1"
+
+config IMAPX_LED_DEBUG
+        bool "Print led debug messages"
+        default n
+
+endif

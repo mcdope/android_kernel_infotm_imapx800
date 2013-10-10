@@ -1,0 +1,61 @@
+menu "SoC Audio for the INFOTM SOC"
+
+config SND_IMAPX800_SOC
+	tristate "SoC Audio for the Infotm Imapx chips"
+	depends on ARCH_IMAPX800 && SND_SOC
+	select SND_PCM
+	help
+		Say Y or M if you want to add support for codecs attached to
+		the AC97, I2S interface. You will also need
+		to select the audio interfaces to support below.
+
+config AUDIO_CODEC_PROCFS
+	bool "Proc-FS interface for audio codec control"
+	depends on SND_IMAPX800_SOC_IMAPX800_WM8987 && PROC_FS
+	default y
+config SND_IMAPX800_SOC_AC97
+	tristate
+	select AC97_BUS
+	select SND_AC97_CODEC
+	select SND_SOC_AC97_BUS
+
+config SND_IMAPX800_SOC_IMAPX800_ES8328
+    tristate "SoC Audio support for IMAPX800 - ES8328"
+	depends on SND_IMAPX800_SOC && ARCH_IMAPX800
+	select SND_SOC_ES8328
+	help
+		Say Y if you want to add support for SoC audio on imapx800
+		or imapx800 with the es8328.
+
+config SND_IMAPX800_SOC_ALC5631
+    tristate "SoC Audio support for IMAPX800 - ALC5631"
+    depends on SND_IMAPX800_SOC && ARCH_IMAPX800
+    select SND_SOC_ALC5631
+    help
+        Say Y if you want to add support for SoC audio on imapx800
+        or imapx800 with the alc5631.
+
+if SND_IMAPX800_SOC_IMAPX800_ES8328 || SND_IMAPX800_SOC_ALC5631
+config SND_IMAPX800_SOC_I2S
+	bool "IMAPX800 Codec with I2S transfer data"
+    default n
+
+config SND_IMAPX800_SOC_PCM
+    bool "IMAPX800 Codec with PCM transfer data"
+    default n
+endif
+
+config SND_IMAPX800_SOC_DMIC_PWMA
+    tristate "imapx800 dmic and pwma"
+    depends on SND_IMAPX800_SOC && ARCH_IMAPX800
+	help
+	    This is option to select imapx800 dmic and pwma driver
+
+config SND_IMAPX800_SOC_SPDIF
+    tristate "support for imapx800 spdif interface"
+    depends on SND_IMAPX800_SOC && ARCH_IMAPX800
+    help
+        This is option for support spdif interface
+
+endmenu
+

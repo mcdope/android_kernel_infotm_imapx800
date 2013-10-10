@@ -1,0 +1,23 @@
+#
+# Kconfig IMAPX camera driver.
+#
+# Copyright (c) 2009~2014 ShangHai Infotm Ltd all rights reserved.
+#
+# Sololz<sololz.luo@gmail.com>.
+#
+
+menuconfig IMAPX_MULTIMEDIA_CAMERA_SUPPORT
+	bool "Camera driver based on IMAPX platform(new version)"
+	depends on MACH_IMAPX200
+	default y
+	---help---
+	New version of camera driver in kernel space, pre version is 
+	written and preserved by Petter Fu.
+
+if IMAPX_MULTIMEDIA_CAMERA_SUPPORT
+
+config IMAPX_CAMERA_DEBUG_ENABLE
+	bool "Enable camera driver debug message print"
+	default n
+
+endif	# IMAPX_MULTIMEDIA_CAMERA_SUPPORT

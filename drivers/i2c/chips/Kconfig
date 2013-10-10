@@ -1,0 +1,80 @@
+menu "Miscellaneous I2C Chip support"
+
+config BOSCH_BMA150
+	tristate "SMB380/BMA150 acceleration sensor support"
+	depends on I2C=y
+	help
+	If you say yes here you get support for Bosch Sensortec's
+	acceleration sensors SMB380/BMA150.
+
+config BOSCH_DMARD08
+	tristate "DMARD08 acceleration sensor susport"
+	depends on I2C=y
+	help
+	If you say yes here you get support for Bosch Sensortec
+	acceleration sensors DMARD08.
+
+config BOSCH_DMT06
+	tristate "DMT06 acceleration sensor susport"
+	depends on I2C=y
+	help
+	If you say yes here you get support for Bosch Sensortec
+	acceleration sensors DMT06.
+
+config BOSCH_AFA750
+	tristate "AFA750 acceleration sensor susport"
+	depends on I2C=y
+	help
+	If you say yes here you get support for Bosch Sensortec
+	acceleration sensors afa750.
+
+config BOSCH_MC32X0
+	tristate "mc32x0 acceleration sensor susport"
+	depends on I2C=y
+	help
+	If you say yes here you get support for Bosch Sensortec
+	acceleration sensors mc32x0.
+
+config BOSCH_STK831X
+	tristate "stk831x acceleration sensor susport"
+	depends on I2C=y
+	help
+	If you say yes here you get support for Bosch Sensortec
+	acceleration sensors stk831x.
+
+config BOSCH_LSM303DLHC_ACC
+    tristate "BOSCH_LSM303DLHC_ACC acceleration sensor susport"
+    depends on I2C=y
+    help
+    If you say yes here you get support for Bosch Sensortec
+    acceleration sensors LSM303DLHC_ACC.
+
+config BOSCH_LSM303DLHC_MAG
+    tristate "BOSCH_LSM303DLHC_MAG acceleration sensor susport"
+    depends on I2C=y
+    help
+    If you say yes here you get support for Bosch Sensortec
+    acceleration sensors LSM303DLHC_MAG.
+
+config  CHARGER_BQ
+	tristate "bq2415x charger  support"
+	depends on I2C=y
+	help
+	If you say yes here you get support for bq2415x charger
+	acceleration sensors SMB380/BMA150.
+	
+config FSL_MMA7660
+	tristate " Freescale MMA7660 acceleration sensor susport"
+	depends on I2C=y
+	help
+	If you say yes here you get support for Freescale's
+	acceleration sensors MMA7660.
+config FSL_MMA845X
+	tristate " Freescale MMA845X acceleration sensor susport"
+	depends on I2C=y
+	help
+	If you say yes here you get support for Freescale's
+	acceleration sensors MMA845X.
+		
+endmenu
+

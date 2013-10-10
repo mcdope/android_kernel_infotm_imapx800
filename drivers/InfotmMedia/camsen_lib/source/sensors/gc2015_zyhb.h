@@ -1,0 +1,612 @@
+/*------------------------------------------------------------------------------
+-- 	Copyright (c) 2009~2014 ShangHai Infotm Ltd all rights reserved. 		  --
+-- 				   															  --
+-- 	This program is free software; you can redistribute it and/or modify	  --
+-- 	it under the terms of the GNU General Public License as published by	  --
+-- 	the Free Software Foundation; either version 2 of the License, or		  --
+-- 	(at your option) any later version.							              --
+--------------------------------------------------------------------------------
+--	RCSfile: gc2015_zyhb.h
+--
+--  Description :
+--
+--	Author:
+--     Arsor Fu   <arsor.fu@infotmic.com.cn>
+--
+--------------------------------------------------------------------------------
+-- Revision History: 
+-------------------- 
+-- v1.0.1	arsor@2012/08/23: first commit.
+--
+------------------------------------------------------------------------------*/
+
+#define GC2015_I2C_ADDR                (0x60 >> 1) 
+
+//#define A_LIGHT_CORRECTION
+
+static struct gc2015_regval_list {
+	IM_UINT8  reg;
+	IM_UINT8  value;
+};
+
+static struct gc2015_regval_list  gc2015_uxga_regs[] = {
+	{0xfe, 0x00},
+	{0x02, 0x00},
+	{0X2a, 0x0a},
+        
+	//sub}sample 1/1
+	{0x59, 0x11},
+	{0x5a, 0x06},
+	{0x5b, 0x00},
+	{0x5c, 0x00},
+	{0x5d, 0x00},
+	{0x5e, 0x00},
+	{0x5f, 0x00},
+	{0x60, 0x00},
+	{0x61, 0x00},
+	{0x62, 0x00},
+     
+	//crop 
+	{0x50, 0x01},
+	{0x51, 0x00},
+	{0x52, 0x00},
+	{0x53, 0x00},
+	{0x54, 0x00},
+	{0x55, 0x04},
+	{0x56, 0xb0},
+	{0x57, 0x06},
+	{0x58, 0x40},
+
+	{0x48, 0x68}
+};
+
+static struct gc2015_regval_list  gc2015_svga_regs[] = {
+ 	{0xfe,0x00},
+	{0x02,0x01},
+	{0x2a,0xca},
+	
+	{0x59,0x11},//out window
+	{0x5a,0x06},
+	{0x5b,0x00},
+	{0x5c,0x00},
+	{0x5d,0x00},
+	{0x5e,0x00},
+	{0x5f,0x00}, 
+	{0x60,0x00},
+	{0x61,0x00},
+  	{0x62,0x00},
+	
+	{0x50,0x01},//out window
+	{0x51,0x00},
+	{0x52,0x00},
+	{0x53,0x00},
+	{0x54,0x00},
+	{0x55,0x02},
+	{0x56,0x58},// 600
+	{0x57,0x03},
+	{0x58,0x20},//800
+
+	  ///offset////
+	{0x6e,0x1a},
+	{0x6f,0x20},
+	{0x70,0x1a},
+	{0x71,0x20},
+	
+	{0x48,0x40},
+	{0x4f,0x01},//aec
+	//{{0x42},  {0x76}},//awb
+};
+
+static struct gc2015_regval_list  gc2015_vga_regs[] = {
+  	{0xfe,0x00},
+	{0x02,0x01},
+	{0x2a,0xca},
+	//subsample 4/5
+
+	{0x59,0x55},//out window
+	{0x5a,0x06},
+	{0x5b,0x00},
+	{0x5c,0x00},
+	{0x5d,0x01},
+	{0x5e,0x23},
+	{0x5f,0x00}, 
+	{0x60,0x00},
+	{0x61,0x01},
+  	{0x62,0x23},
+	
+	{0x50,0x01},//out window
+	{0x51,0x00},
+	{0x52,0x00},
+	{0x53,0x00},
+	{0x54,0x00},
+	{0x55,0x01},
+	{0x56,0xf8},//e0},// 480
+	{0x57,0x02},
+	{0x58,0x80},//640 
+
+	   ///offset////
+	{0x6e,0x1a},
+	{0x6f,0x20},
+	{0x70,0x1a},
+	{0x71,0x20},
+	
+	{0x48,0x40},
+	{0x4f,0x01},//aec
+	//{{0x42},  {0x76}},//awb
+
+	
+	//{{0x45} , {0x0f}} //output enable
+};
+
+static struct gc2015_regval_list  gc2015_qvga_regs[] = {
+
+};
+
+
+static struct gc2015_regval_list  gc2015_init_regs[] = {
+	{0xfe,0x80}, //soft reset
+	{0xfe,0x80}, //soft reset
+	{0xfe,0x80}, //soft reset
+	     
+	{0xfe,0x00}, //page0
+	{0x45,0x00}, //output_disable
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////preview capture switch /////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+	//preview
+	{0x02,0x01}, //preview mode
+	{0x2a,0xca}, //[7]col_binning},{ 0x[6]even skip
+	{0x48,0x40}, //manual_gain
+
+	////////////////////////////////////////////////////////////////////////
+	////////////////////////// preview LSC /////////////////////////////////
+	////////////////////////////////////////////////////////////////////////
+	{0xfe,0x01}, //page1
+	{0xb0,0x03}, //[4]Y_LSC_en [3]lsc_compensate [2]signed_b4 [1:0]pixel array select
+	{0xb1,0x23}, //P_LSC_red_b2
+	{0xb2,0x20}, //P_LSC_green_b2
+	{0xb3,0x20}, //P_LSC_blue_b2
+	{0xb4,0x24}, //P_LSC_red_b4
+	{0xb5,0x20}, //P_LSC_green_b4
+	{0xb6,0x22}, //P_LSC_blue_b4
+	{0xb7,0x00}, //P_LSC_compensate_b2
+	{0xb8,0x80}, //P_LSC_row_center},{ 0x344},{ 0x (1200/2-344)/2=128},{ 0x},{ 0x
+	{0xb9,0x80}, //P_LSC_col_center},{ 0x544},{ 0x (1600/2-544)/2=128
+
+
+	////////////////////////////////////////////////////////////////////////
+	////////////////////////// capture LSC /////////////////////////////////
+	////////////////////////////////////////////////////////////////////////
+	{0xba,0x03}, //[4]Y_LSC_en [3]lsc_compensate [2]signed_b4 [1:0]pixel array select
+	{0xbb,0x23}, //C_LSC_red_b2
+	{0xbc,0x20}, //C_LSC_green_b2
+	{0xbd,0x20}, //C_LSC_blue_b2
+	{0xbe,0x24}, //C_LSC_red_b4
+	{0xbf,0x20}, //C_LSC_green_b4
+	{0xc0,0x22}, //C_LSC_blue_b4
+	{0xc1,0x00}, //C_Lsc_compensate_b2
+	{0xc2,0x80}, //C_LSC_row_center},{ 0x344},{ 0x (1200/2-344)/2=128
+	{0xc3,0x80}, //C_LSC_col_center},{ 0x544},{ 0x (1600/2-544)/2=128
+	{0xfe,0x00}, //page0
+
+	////////////////////////////////////////////////////////////////////////
+	////////////////////////// analog configure ///////////////////////////
+	////////////////////////////////////////////////////////////////////////
+	{0xfe,0x00}, //page0
+	{0x29,0x00}, //cisctl mode 1
+	{0x2b,0x06}, //cisctl mode 3	
+	{0x32,0x1c}, //analog mode 1
+	{0x33,0x0f}, //analog mode 2
+	{0x34,0x30}, //[6:4]da_rsg
+
+	{0x35,0x88}, //Vref_A25
+	{0x37,0x1f},//13}, //Drive Current  0x16 2012-3-15
+
+	/////////////////////////////////////////////////////////////////////
+	/////////////////////////// ISP Related /////////////////////////////
+	/////////////////////////////////////////////////////////////////////
+	{0x40,0xff}, 
+	{0x41,0x20}, //[5]skin_detectionenable[2]auto_gray},{ 0x[1]y_gamma
+	{0x42,0xf6}, //[7]auto_sa[6]auto_ee[5]auto_dndd[4]auto_lsc[3]na[2]abs},{ 0x[1]awb
+	{0x4b,0xe8}, //[1]AWB_gain_mode},{ 0x1:atpregain0:atpostgain
+	{0x4d,0x03}, //[1]inbf_en
+	{0x4f,0x01}, //AEC enable
+
+	////////////////////////////////////////////////////////////////////
+	///////////////////////////  BLK  //////////////////////////////////
+	////////////////////////////////////////////////////////////////////
+	{0x63,0x77}, //BLK mode 1
+	{0x66,0x00}, //BLK global offset
+	{0x6d,0x00},
+	{0x6e,0x1a}, //BLK offset submode},{offset R
+	{0x6f,0x20},
+	{0x70,0x1a},
+	{0x71,0x20},
+	{0x73,0x00},
+	{0x77,0x80},
+	{0x78,0x80},
+	{0x79,0x90},
+
+	////////////////////////////////////////////////////////////////////
+	/////////////////////////// DNDD ///////////////////////////////////
+	////////////////////////////////////////////////////////////////////
+	{0x80,0x07}, //[7]dn_inc_or_dec [4]zero_weight_mode[3]share [2]c_weight_adap [1]dn_lsc_mode [0]dn_b
+	{0x82,0x0c}, //DN lilat b base
+	{0x83,0x03},
+
+	////////////////////////////////////////////////////////////////////
+	/////////////////////////// EEINTP ////////////////////////////////
+	////////////////////////////////////////////////////////////////////
+	{0x8a,0x7c},
+	{0x8c,0x02},
+	{0x8e,0x02},
+	{0x8f,0x45},
+
+
+	/////////////////////////////////////////////////////////////////////
+	/////////////////////////// CC_t ////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////
+	{0xb0,0x48},
+	{0xb1,0xfe},
+	{0xb2,0x00},
+	{0xb3,0xf0},
+	{0xb4,0x50},
+	{0xb5,0xf8},
+	{0xb6,0x00},
+	{0xb7,0x00},
+	{0xb8,0x00},
+
+
+	/////////////////////////////////////////////////////////////////////
+	/////////////////////////// GAMMA ///////////////////////////////////
+	/////////////////////////////////////////////////////////////////////
+	//RGB_GAMMA
+	{0xbf,0x08}, 
+	{0xc0,0x1e},
+	{0xc1,0x33},
+	{0xc2,0x47},
+	{0xc3,0x59},
+	{0xc4,0x68},
+	{0xc5,0x74},
+	{0xc6,0x86},
+	{0xc7,0x97},
+	{0xc8,0xA5},
+	{0xc9,0xB1},
+	{0xca,0xBd},
+	{0xcb,0xC8},
+	{0xcc,0xD3},
+	{0xcd,0xE4},
+	{0xce,0xF4},
+	{0xcf,0xff},
+
+	/////////////////////////////////////////////////////////////////////
+	/////////////////////////// YCP_t ///////////////////////////////////
+	/////////////////////////////////////////////////////////////////////
+	{0xd1,0x38}, //saturation
+	{0xd2,0x38}, //saturation
+	{0xdd,0x38}, //edge_dec
+	{0xde,0x21}, //auto_gray
+
+	////////////////////////////////////////////////////////////////////
+	/////////////////////////// ASDE ///////////////////////////////////
+	////////////////////////////////////////////////////////////////////
+	{0x98,0x3a}, 
+	{0x99,0x60}, 
+	{0x9b,0x00}, 
+	{0x9f,0x12}, 
+	{0xa1,0x80}, 
+	{0xa2,0x21}, 
+	
+	{0xfe,0x01}, //page1
+	{0xc5,0x10}, 
+	{0xc6,0xff}, 
+	{0xc7,0xff}, 
+	{0xc8,0xff}, 
+	////////////////////////////////////////////////////////////////////
+	/////////////////////////// AEC  ////////////////////////////////
+	////////////////////////////////////////////////////////////////////
+	{0x10,0x09}, //AEC mode 1
+	{0x11,0xb2}, //[7]fix target
+	{0x12,0x20}, 
+	{0x13,0x78}, 
+	{0x17,0x00}, 
+	{0x1c,0x96}, 
+	{0x1d,0x04}, // sunlight step 
+	{0x1e,0x11}, 
+	{0x21,0xc0}, //max_post_gain
+	{0x22,0x60}, //max_pre_gain
+	{0x2d,0x06}, //P_N_AEC_exp_level_1[12:8]
+	{0x2e,0x00}, //P_N_AEC_exp_level_1[7:0]
+	{0x1e,0x32}, 
+	{0x33,0x00}, //[6:5]max_exp_level [4:0]min_exp_level
+	{0x34,0x04}, // min exp
+
+	////////////////////////////////////////////////////////////////////
+	/////////////////////////// Measure Window /////////////////////////
+	////////////////////////////////////////////////////////////////////
+	{0x06,0x07},
+	{0x07,0x03},
+	{0x08,0x64},
+	{0x09,0x4a},
+
+	////////////////////////////////////////////////////////////////////
+	/////////////////////////// AWB ////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
+	{0x50,0xf5},
+	{0x51,0x18},
+	{0x53,0x10},
+	{0x54,0x20},
+	{0x55,0x60},
+	{0x57,0x33}, //number limit , 33 half , must <0x65 base on measure wnd now
+	{0x5d,0x52}, //44
+	{0x5c,0x25}, //show mode,close dark_mode
+	{0x5e,0x19}, //close color temp
+	{0x5f,0x50}, //50
+	{0x60,0x57}, //50
+	{0x61,0xdf},
+	{0x62,0x80}, //7b
+	{0x63,0x08}, //20
+	{0x64,0x5B},
+	{0x65,0x90},
+	{0x66,0xd0},
+	{0x67,0x80}, //5a
+	{0x68,0x68}, //68
+	{0x69,0x90}, //80
+
+	////////////////////////////////////////////////////////////////////
+	///////////////////////////  ABS  ////////////////////////////////
+	////////////////////////////////////////////////////////////////////
+	{0x80,0x82},
+	{0x81,0x00},
+	{0x83,0x10}, //ABS Y stretch limit
+	{0xfe,0x00},
+	
+	////////////////////////////////////////////////////////////////////
+	/////////////////////////// OUT ////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
+	{0xfe,0x00},
+	//crop 
+	{0x50,0x01},
+	{0x51,0x00},
+	{0x52,0x00},
+	{0x53,0x00},
+	{0x54,0x00},
+	{0x55,0x02},
+	{0x56,0x58},
+	{0x57,0x03},
+	{0x58,0x20},
+
+	{0x44,0xa2}, //YUV sequence
+	{0x45,0x0f}, //output enable
+	{0x46,0x03}, //sync mode
+
+	//--------------------Updated By Mormo 2011/08/08 Start --------------------//
+        {0xfe,0x00},
+	{0x32,0x34},
+	{0x34,0x00},
+//--------------------Updated By Mormo 2011/08/08 End ---------------------//	
+
+	{0xbF,0x0B}, 
+	{0xc0,0x16}, 
+	{0xc1,0x29}, 
+	{0xc2,0x3C}, 
+	{0xc3,0x4F}, 
+	{0xc4,0x5F}, 
+	{0xc5,0x6F}, 
+	{0xc6,0x8A}, 
+	{0xc7,0x9F}, 
+	{0xc8,0xB4}, 
+	{0xc9,0xC6}, 
+	{0xcA,0xD3}, 
+	{0xcB,0xDD},  
+	{0xcC,0xE5},  
+	{0xcD,0xF1}, 
+	{0xcE,0xFA}, 
+	{0xcF,0xFF}, 
+//////////////////////////////////////////////////////////////////
+	//////////////////////// YCP_t  ///////////////////////////////
+          
+                     
+/////////window for svga preview///////
+ 	{0xfe, 0x00},
+	{0x02, 0x01},  // preview mode
+	{0x2a, 0xca},  // [7] Column Bin (default Preview)  [6] Row evenskip (default Preview)
+	   
+	{0x59,0x11},//out window
+	{0x5a,0x06},
+	{0x5b,0x00},
+	{0x5c,0x00},
+	{0x5d,0x00},
+	{0x5e,0x00},
+	{0x5f,0x00}, 
+	{0x60,0x00},
+	{0x61,0x00},
+        {0x62,0x00},
+	
+	{0x50,0x01},//out window
+	{0x51,0x00},
+	{0x52,0x00},
+	{0x53,0x00},
+	{0x54,0x00},
+	{0x55,0x02},
+	{0x56,0x58},// 600
+	{0x57,0x03},
+	{0x58,0x20},//800
+//////////////window end///////////////
+//frame rate
+	{0x05,0x01},
+	{0x06,0xc1},
+	{0x07,0x00},
+	{0x08,0x40},
+
+	{0xfe,0x01},
+	{0x29,0x00},
+	{0x2a,0x80},
+	{0x2b,0x05},
+	{0x2c,0x00},
+	{0x2d,0x06},
+	{0x2e,0x00},
+	{0x2f,0x08},
+	{0x30,0x00},
+	{0x31,0x09},
+	{0x32,0x00},
+	{0x33,0x20},
+
+	{0xfe,0x00},
+};
+
+static struct gc2015_regval_list  gc2015_sepia_regs[] = {
+	{0xfe,0x00},
+	{0x43,0x02},
+	{0xda,0xd0},
+	{0xdb,0x28}
+};
+
+static struct gc2015_regval_list  gc2015_bluish_regs[] = {
+	{0xfe,0x00},
+	{0x43,0x02},
+	{0xda,0x50},
+	{0xdb,0xe0}
+};
+
+static struct gc2015_regval_list  gc2015_greenish_regs[] = {
+	{0xfe,0x00},
+	{0x43,0x02},
+	{0xda,0xc0},
+	{0xdb,0xc0}
+};
+
+static struct gc2015_regval_list  gc2015_reddish_regs[] = {
+
+};
+
+static struct gc2015_regval_list  gc2015_yellowish_regs[] = {
+
+};
+
+static struct gc2015_regval_list  gc2015_bandw_regs[] = {
+
+};
+
+static struct gc2015_regval_list  gc2015_negative_regs[] = {
+	{0xfe,0x00},
+	{0x43,0x01},
+};
+
+static struct gc2015_regval_list  gc2015_normal_regs[] = {
+	{0xfe,0x00},
+	{0x43,0x00},
+};
+
+
+static struct gc2015_regval_list  gc2015_auto_regs[] = {
+	
+};
+
+static struct gc2015_regval_list  gc2015_sunny_regs[] = {
+	{0xfe,0x00},
+	{0x7a,0x74},
+	{0x7b,0x52},
+	{0x7c,0x40},
+};
+
+static struct gc2015_regval_list  gc2015_cloudy_regs[] = {
+	{0xfe,0x00},//bai re guang
+	{0x7a,0x8c},
+	{0x7b,0x50},
+	{0x7c,0x40},	
+};
+
+static struct gc2015_regval_list  gc2015_office_regs[] = {
+	{0xfe,0x00},//ri guang deng
+	{0x42,0x74},
+	{0x7a,0x48},
+	{0x7b,0x40},
+	{0x7c,0x5c},
+};
+
+static struct gc2015_regval_list  gc2015_home_regs[] = {
+	{0xfe,0x00},
+	{0x42,0x74},
+	{0x7a,0x40},
+	{0x7b,0x42},
+	{0x7c,0x50},
+};
+
+static struct gc2015_regval_list  gc2015_sunset_regs[] = {
+
+};
+
+static struct gc2015_regval_list  gc2015_night_regs[] = {
+
+};
+
+static	struct gc2015_regval_list  gc2015_50hz_regs = {};
+
+static	struct gc2015_regval_list  gc2015_60hz_regs = {};
+
+
+static	struct gc2015_regval_list  gc2015_ev_neg4_regs[] = {
+	{0xfe,0x01},
+	{0x13,0x60}, //AEC_target_Y  
+	{0xfe,0x00},
+	{0xd5,0xc0}// Luma_offset 
+};
+
+static	struct gc2015_regval_list  gc2015_ev_neg3_regs[] = {
+	{0xfe,0x01},
+	{0x13,0x68}, //AEC_target_Y  
+	{0xfe,0x00},
+	{0xd5,0xd0}// Luma_offset 	
+};
+
+static	struct gc2015_regval_list  gc2015_ev_neg2_regs[] = {
+	{0xfe,0x01},
+	{0x13,0x70}, //AEC_target_Y  
+	{0xfe,0x00},
+	{0xd5,0xe0}// Luma_offset
+};
+
+static	struct gc2015_regval_list  gc2015_ev_neg1_regs[] = {
+	{0xfe,0x01},
+	{0x13,0x78}, //AEC_target_Y  
+	{0xfe,0x00},
+	{0xd5,0xf0}// Luma_offset	
+};
+
+static	struct gc2015_regval_list  gc2015_ev_zero_regs[] = {
+	{0xfe,0x01},
+	{0x13,0x88}, //AEC_target_Y  48
+	{0xfe,0x00},
+	{0xd5,0x00}// Luma_offset  c0
+};
+
+static	struct gc2015_regval_list  gc2015_ev_pos1_regs[] = {
+	{0xfe,0x01},
+	{0x13,0x90}, //AEC_target_Y  
+	{0xfe,0x00},
+	{0xd5,0x10}// Luma_offset	
+};
+
+static	struct gc2015_regval_list  gc2015_ev_pos2_regs[] = {
+	{0xfe,0x01},
+	{0x13,0x98}, //AEC_target_Y  
+	{0xfe,0x00},
+	{0xd5,0x20}// Luma_offset	
+};
+
+static	struct gc2015_regval_list  gc2015_ev_pos3_regs[] = {
+	{0xfe,0x01},
+	{0x13,0xa0}, //AEC_target_Y  
+	{0xfe,0x00},
+	{0xd5,0x30}// Luma_offset	
+};
+
+static	struct gc2015_regval_list  gc2015_ev_pos4_regs[] = {
+	{0xfe,0x01},
+	{0x13,0xa8}, //AEC_target_Y  
+	{0xfe,0x00},
+	{0xd5,0x40}// Luma_offset 	
+};
+

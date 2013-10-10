@@ -1,0 +1,58 @@
+
+#arch/arm/mach-imapx200/Kconfig
+# Copyright (c) 2009~2014 ShangHai Infotm Ltd all rights reserved. 
+# Use of Infotm's code is governed by terms and conditions
+# stated in the accompanying licensing statement. 
+# Author:
+#     ALex Zhang   <tao_zhang@infotm.com>
+# Revision History: 
+# ----------------
+# 1.1  16/09/2009  Alex Zhang   
+
+menu "IMAPX800 Machines"
+
+config MACH_IMAPX800
+	bool "IMAPX800"
+	select CPU_IMAPX800
+	help
+	  Say Y here if you are using the IMAPX800
+
+endmenu
+
+config CPU_IMAPX800
+	bool
+	depends on ARCH_IMAPX800
+	help
+	  Support for IMAPX800 Infotm Mobile CPU based systems.
+
+
+config IMAPX800_FPGA_PLATFORM
+	bool "imapx800 fpga test"
+	depends on ARCH_IMAPX800
+	default n
+	help 
+	   If you are operating on the FPGA platform, set Y here!
+
+config FPGA_CPU_CLK
+	int "FPGA cpu clock configure"
+	depends on IMAPX800_FPGA_PLATFORM
+	default "40000000"
+
+config FPGA_EXTEND_CLK
+	int "FPGA externel clock configure"
+	depends on IMAPX800_FPGA_PLATFORM
+	default "40000000"
+
+config IMAPX800_DMA
+	bool
+	depends on ARCH_IMAPX800
+	select PL330
+	default y
+	help
+	imapx800 dma enable
+
+config  FAKE_PM
+        bool "Support for fake power manage"
+        depends on ARCH_IMAPX800
+        default n
+

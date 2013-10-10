@@ -1,0 +1,21 @@
+#
+# Kconfig InfotmMedia pmm driver.
+#
+# Copyright (c) 2009~2014 ShangHai Infotm Ltd all rights reserved.
+#
+#
+
+menuconfig INFOTM_MEDIA_PMM_I800_SUPPORT
+        bool "InfotmMedia pmm&dmmu_i800 driver support"
+        default y
+        ---help---
+		pmm&dmmu driver.
+
+if INFOTM_MEDIA_PMM_I800_SUPPORT
+config PMM_RESERVE_MEM_SIZE_MB
+	int "reserve memory for PMM to allocate physical-linear buffer"
+	depends on INFOTM_MEDIA_PMM_I800_SUPPORT
+	default 64
+
+endif	#INFOTM_MEDIA_PMM_I800_SUPPORT
+

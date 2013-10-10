@@ -1,0 +1,96 @@
+12/02/2012	Sololz Luo	<sololz.luo@gmail.com>
+
+        Delete all IMAPX200 relate code on IMAPX800.
+        Delete lpmemalloc function interfaces.
+
+09/01/2012	Sololz Luo	<sololz.luo@gmail.com>
+
+        Modify code to Kconfig to remove hardware dependance.
+
+        * m_enable_mp()
+        * m_disable_mp()
+        * mpdma_memcpy()
+
+08/16/2011	Sololz Luo	<sololz.luo@gmail.com>
+
+        Fix a bug of refree.
+
+        * rsv_free()
+
+08/04/2011	Sololz Luo	<sololz.luo@gmail.com>
+
+        Add reserved memory shared feature.
+
+04/06/2011	Sololz Luo	<sololz.luo@gmail.com>
+
+        Add a ioctl to export reserved memory size.
+
+03/09/2011	Sololz Luo	<sololz.luo@gmail.com>
+
+        Add support of exporting memory pool memory to user space.
+
+02/18/2011	Sololz Luo	<sololz.luo@gmail.com>
+
+        Add support for Android pmem driver interfaces to emulate it.
+
+02/12/2011	Sololz Luo	<sololz.luo@gmail.com>
+
+        Create a new allocator to provide better alloc/free operation speed
+        while facing huge amount of small memory requirement.
+
+01/29/2011	Sololz Luo	<sololz.luo@gmail.com>
+
+        Add cached memory access support.
+
+01/13/2011	Sololz Luo	<sololz.luo@gmail.com>
+
+        Add support to manage memory pool memory for fast accessing.
+
+01/04/2011	Sololz Luo	<sololz.luo@gmail.com>
+
+        Accelerate multi thread access of memory.
+
+01/03/2011	Sololz Luo	<sololz.luo@gmail.com>
+
+        Add a new shared memory mechanism, preversion is deprecated to be
+        used. And change the driver register mode, and code style.
+
+12/06/2010	Sololz Luo	<sololz.luo@gmail.com>
+
+        Modify DMA copy code, annotate down_write before get_user_pages().
+
+10/21/2010	Sololz Luo	<sololz.luo@gmail.com>
+
+        Add support for mpool power communication with decode driver.
+
+07/26/2010	Sololz Luo	<sololz.luo@gmail.com>
+
+        Add support for user space virtual address memory copy using mmpool.
+
+07/21/2010	Sololz Luo	<sololz.luo@gmail.com>
+
+        Add function export for other driver use.
+
+07/15/2010	Sololz Luo	<sololz.luo@gmail.com>
+
+        Modified mmap mode, force mmap user space memory to be uncached.
+
+07/07/2010	Sololz Luo	<sololz.luo@gmail.com>
+
+        Add reserved memory management for Android to avoid memory fragment.
+
+06/13/2010	Sololz Luo	<sololz.luo@gmail.com>
+
+        Add memory pool operation to support DMA copy.
+
+06/02/2010	Sololz Luo	<sololz.luo@gmail.com>
+
+        Add share memory support for Android, and modify driver structure.
+
+12/25/2009	Raymond
+
+        Add memalloc_mmap.
+
+12/10/2009	Sololz Luo	<sololz.luo@gmail.com>
+
+        Create driver structure, support physical buffer allocation.

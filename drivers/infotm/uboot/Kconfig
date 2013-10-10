@@ -1,0 +1,10 @@
+#
+# Modules base on InfoTM DSP
+#
+
+config IMAP_BOARD_UBOOT
+	tristate "board configuration UBOOT"
+	default y
+	help
+	  Say Y to enabled customer image backup tools(IBU).
+

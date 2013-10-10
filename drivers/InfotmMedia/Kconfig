@@ -1,0 +1,64 @@
+#
+# Multimedia device configuration
+#
+
+menuconfig INFOTM_MEDIA_SUPPORT
+	bool "Infotm Media driver support"
+	default y
+	help
+		InfotmMedia driver support
+
+if INFOTM_MEDIA_SUPPORT
+
+#
+# g2d_drv_i800
+#
+source "drivers/InfotmMedia/external/project/g2d_drv_i800/Kconfig"
+
+#
+# isp_drv_i800
+#
+source "drivers/InfotmMedia/external/project/isp_drv_i800/Kconfig"
+
+#
+# camif_drv_i800
+#
+source "drivers/InfotmMedia/external/project/camif_drv_i800/Kconfig"
+
+#
+# ids_drv_i800
+#
+source "drivers/InfotmMedia/external/project/ids_drv_i800/Kconfig"
+
+#
+# vdec_drv_g1
+#
+source "drivers/InfotmMedia/external/project/vdec_drv_g1/Kconfig"
+
+#
+# venc_drv_8270
+#
+source "drivers/InfotmMedia/external/project/venc_drv_8270/Kconfig"
+
+#
+# pmm_drv_i800
+#
+source "drivers/InfotmMedia/external/project/pmm_drv_i800/Kconfig"
+
+#
+# ipc_drv
+#
+source "drivers/InfotmMedia/external/project/ipc_drv/Kconfig"
+
+#
+# utlz_drv
+#
+source "drivers/InfotmMedia/external/project/utlz_drv/Kconfig"
+
+#
+# dbt_drv
+#
+source "drivers/InfotmMedia/external/project/dbt_drv/Kconfig"
+
+endif # INFOTM_MEDIA_SUPPORT
+

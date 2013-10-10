@@ -1,0 +1,31 @@
+#
+# IMAP Video Configuration
+#
+
+menuconfig FB_IMAP
+	tristate "IMAP Framebuffer Support"
+	select FB_CFB_FILLRECT
+	select FB_CFB_COPYAREA
+	select FB_CFB_IMAGEBLIT
+	select FRAMEBUFFER_CONSOLE
+	select LOGO
+	select LOGO_LINUX_LANDSCAPED_CLUT224
+	depends on FB && ARCH_IMAPX800
+	default y
+	---help---
+	TBA
+
+config FB_IMAP_NUM
+	int "Number of Framebuffers"
+	depends on FB_IMAP
+	default "1"
+	---help---
+	TBA
+
+config FB_IMAP_BUFFER_NUM
+	int "Number of buffers for Framebuffer"
+	depends on FB_IMAP
+	default "4"
+	---help---
+	TBA
+

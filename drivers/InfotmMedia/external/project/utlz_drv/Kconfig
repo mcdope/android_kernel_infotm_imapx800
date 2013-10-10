@@ -1,0 +1,13 @@
+#
+# Kconfig InfotmMedia utilization statistic driver.
+#
+# Copyright (c) 2009~2014 ShangHai Infotm Ltd all rights reserved.
+#
+#
+
+menuconfig INFOTM_MEDIA_UTLZ_SUPPORT
+        bool "InfotmMedia utilization statistic driver support"
+        default y
+        ---help---
+		utilizaiton statistic driver support
+
